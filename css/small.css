@@ -1,0 +1,41 @@
+@media (max-width: 610px), (max-height: 450px) {
+    div[shunt-frame] div.frame-content.padded {
+        padding: 2em;
+    }
+
+    .blob.seventyfive {
+        width: 100%;
+    }
+
+    .blob.twothirds {
+        width: 100%;
+    }
+
+    .blob.half {
+        width: 100%;
+    }
+
+    .blob.third {
+        width: 100%;
+    }
+
+    .blob.quarter {
+        width: 100%;
+    }
+
+    div#topbar span#name {
+        width: 100%;
+    }
+
+    div#topbar span#topnav {
+        display: none;
+    }
+
+    div#values div.value {
+        width: 100%;
+    }
+
+    div#showcase div.item {
+        width: 100%;
+    }
+}

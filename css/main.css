@@ -1,0 +1,317 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Inconsolata, sans-serif;;
+}
+
+div#topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 2em;
+    width: 100vw;
+
+    box-sizing: border-box;
+    padding: 0.5em 2em 0.5em 2em;
+}
+
+div#main-container {
+    position: absolute !important;
+    top: 2em;
+    left: 0;
+
+    height: calc(100vh - 2em);
+    width: 100vw;
+}
+
+div#topbar span#name {
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+div#topbar span#name a#home {
+    cursor: pointer;
+}
+
+div#topbar span#topnav {
+    font-weight: 700;
+
+    float: right;
+    text-align: right;
+}
+
+div#topbar span#topnav a.link {
+    cursor: pointer;
+
+    margin-left: 1em;
+}
+
+div#topbar span#topnav a.link:hover {
+    text-decoration: underline;
+}
+
+div[shunt-frame] {
+    height: 100%;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+div[shunt-frame] div.frame-content {
+    overflow: auto;
+}
+
+div[shunt-frame] div.frame-content.padded {
+    padding: 4em;
+}
+
+div[shunt-frame] div.frame-content.centered {
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    box-sizing: border-box;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+div[shunt-frame] div.frame-content.v-centered {
+    position: relative;
+    top: 50%;
+
+    box-sizing: border-box;
+
+    transform: translateY(-50%);
+}
+
+div[shunt-frame] div.frame-content.h-centered {
+    position: relative;
+    left: 50%;
+
+    box-sizing: border-box;
+
+    transform: translateX(-50%);
+}
+
+.blob {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+}
+
+.blob.seventyfive {
+    width: 75%;
+}
+
+.blob.twothirds {
+    width: calc(66.6% - 1px);
+}
+
+.blob.half {
+    width: 50%;
+}
+
+.blob.third {
+    width: calc(33.3% - 1px);
+}
+
+.blob.quarter {
+    width: 25%;
+}
+
+blockquote {
+    font-size: 1.2em;
+    border-left: 2px dotted white;
+    padding-left: 1em;
+}
+
+a.in-text.link {
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-shadow: #1F0A5E 1px 1px 2px;
+    text-decoration: none;
+}
+
+a.in-text.link:hover {
+    text-shadow: white 1px 1px 3px;
+}
+
+span.hint.glyph.clickable:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+span.hint.glyph {
+    text-shadow: 0px 0px 2px black;
+}
+
+span.hint.glyph.up {
+    position: absolute;
+    top: 0.5em;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+span.hint.glyph.down {
+    position: absolute;
+    bottom: 0.5em;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+span.hint.glyph.left {
+    position: absolute;
+    top: 50%;
+    left: 0.5em;
+
+    transform: translateY(-50%);
+}
+
+span.hint.glyph.right {
+    position: absolute;
+    top: 50%;
+    right: 0.5em;
+
+    transform: translateY(-50%);
+}
+
+div#values div.value {
+    position: relative;
+
+    display: inline-block;
+    float: left;
+
+    font-size: 0.8em;
+
+    width: 50%;
+
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+div#values div.value img {
+    position: relative;
+
+    display: inline-block;
+    float: left;
+
+    bottom: 0;
+    left: 0;
+
+    opacity: 0.66;
+
+    height: 100px;
+    width: auto;
+
+    transform: skewY(-15deg);
+    -webkit-filter: contrast(150%) drop-shadow(2px 2px 8px white);
+}
+
+div#frame-about img#about-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    z-index: -1;
+    opacity: 0.33;
+    -webkit-filter: contrast(50%) blur(2px);
+}
+
+div.frame div.about-content h1.year {
+    position: relative;
+
+    font-size: 4em;
+
+    text-shadow: 2px 2px 2px black;
+}
+
+div.frame div.about-content h1.year img.year {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+
+    transform: skewY(-15deg);
+    -webkit-filter: drop-shadow(1px 1px 1px white);
+}
+
+div#showcase div.item {
+    position: relative;
+
+    display: inline-block;
+    float: left;
+
+    font-size: 0.8em;
+
+    overflow: hidden;
+    min-height: 15em;
+    width: 50%;
+
+    box-sizing: border-box;
+    padding: 1em;
+
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+div#showcase div.item.clickable:hover {
+    cursor: pointer;
+    opacity: 0.66;
+}
+
+div#showcase div.item img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+
+    height: auto;
+    width: 100%;
+
+    z-index: -1;
+
+    -webkit-filter: contrast(150%);
+}
+
+div#showcase div.item h2 {
+    text-shadow: 1px 1px black;
+}
+
+div#frame-work-paparazzi-page-1 {
+    overflow: hidden;
+}
+
+div#frame-work-paparazzi-page-1 div.frame-content {
+    position: relative;
+
+    text-shadow: 2px 2px 4px black;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+div#frame-work-paparazzi-page-1 img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+
+    height: auto;
+    width: 100%;
+
+    z-index: -1;
+}
