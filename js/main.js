@@ -14,9 +14,11 @@ shunts = new ShuntDiv(document.getElementById('main-container'), [
     overflow: 'auto',
 });
 
-INTRODUCTION_FRAMES = ["home", "about", "work"];
+INTRODUCTION_FRAMES = ["frame-home", "frame-about", "frame-work", "frame-resume"];
+INTRODUCTION_FRAMES_WRAPPED = INTRODUCTION_FRAMES.concat([INTRODUCTION_FRAMES[0]]);
+
 INTRODUCTION_FRAMES.forEach(function(frame) {
-    shunts.addShunt(new ShuntDiv.Introduction('frame-' + frame, 'dualAnimateCss', {
+    shunts.addShunt(new ShuntDiv.Introduction(frame, 'dualAnimateCss', {
         exit_animation_name:  'fadeOut',
         exit_animation_function: 'ease',
         exit_animation_time: 400,
@@ -25,8 +27,41 @@ INTRODUCTION_FRAMES.forEach(function(frame) {
         enter_animation_time: 400,
     }));
 
-    document.querySelector('div#topbar a.link#' + frame).addEventListener('click', function() { shunts.introduce('frame-' + frame); });
+    document.querySelector('div#topbar a.link#' + frame).addEventListener('click', function() { shunts.introduce(frame); });
 });
+
+for (i = 0, j = 1; j < INTRODUCTION_FRAMES_WRAPPED.length; ++i, ++j) {
+    (function(frame_1, frame_2) {
+        shunts.addShunt(new ShuntDiv.Transition(frame_1, frame_2, 'dualAnimateCss', 'keypress', {
+            key: 39,
+            exit_animation_name:  'fadeOutLeft',
+            exit_animation_function: 'ease',
+            enter_animation_name: 'fadeInRight',
+            enter_animation_function: 'ease',
+        }));
+        shunts.addShunt(new ShuntDiv.Transition(frame_2, frame_1, 'dualAnimateCss', 'keypress', {
+            key: 37,
+            exit_animation_name:  'fadeOutRight',
+            exit_animation_function: 'ease',
+            enter_animation_name: 'fadeInLeft',
+            enter_animation_function: 'ease',
+        }));
+        shunts.addShunt(new ShuntDiv.Transition(frame_1, frame_2, 'dualAnimateCss', 'touchSwipe', {
+            swipe: 'left',
+            exit_animation_name:  'fadeOutLeft',
+            exit_animation_function: 'ease',
+            enter_animation_name: 'fadeInRight',
+            enter_animation_function: 'ease',
+        }));
+        shunts.addShunt(new ShuntDiv.Transition(frame_2, frame_1, 'dualAnimateCss', 'touchSwipe', {
+            swipe: 'right',
+            exit_animation_name:  'fadeOutRight',
+            exit_animation_function: 'ease',
+            enter_animation_name: 'fadeInLeft',
+            enter_animation_function: 'ease',
+        }));
+    })(INTRODUCTION_FRAMES_WRAPPED[i], INTRODUCTION_FRAMES_WRAPPED[j])
+};
 
 shunts.addShunt(new ShuntDiv.Transition('frame-about', 'frame-about-page-1', 'dualAnimateCss', 'keypress', {
     key: 38,
@@ -169,7 +204,28 @@ WORK_PAGE_1_FRAMES.forEach(function(frame) {
         animation_name:  'fadeInUp',
         animation_function: 'ease',
     }));
+    shunts.addShunt(new ShuntDiv.Transition(frame, 'frame-work', 'enterAnimateCss', 'keypress', {
+        key: 38,
+        animation_name:  'fadeInDown',
+        animation_function: 'ease',
+    }));
+    shunts.addShunt(new ShuntDiv.Transition(frame, 'frame-work', 'enterAnimateCss', 'wheel', {
+        deltaY: -20,
+        animation_name:  'fadeInDown',
+        animation_function: 'ease',
+    }));
 });
+
+shunts.addShunt(new ShuntDiv.Transition('frame-work', WORK_PAGE_1_FRAMES[0], 'exitAnimateCss', 'keypress', {
+    key: 40,
+    animation_name:  'fadeOutUp',
+    animation_function: 'ease',
+}));
+shunts.addShunt(new ShuntDiv.Transition('frame-work', WORK_PAGE_1_FRAMES[0], 'exitAnimateCss', 'wheel', {
+    deltaY: 20,
+    animation_name:  'fadeOutUp',
+    animation_function: 'ease',
+}));
 
 WORK_PAGE_1_FRAMES_WRAPPED = WORK_PAGE_1_FRAMES.concat([WORK_PAGE_1_FRAMES[0]]);
 
@@ -246,20 +302,6 @@ shunt_vertical_chain = function(frames) {
             }));
             shunts.addShunt(new ShuntDiv.Transition(frame_2, frame_1, 'dualAnimateCss', 'keypress', {
                 key: 38,
-                exit_animation_name:  'fadeOutDown',
-                exit_animation_function: 'ease',
-                enter_animation_name: 'fadeInDown',
-                enter_animation_function: 'ease',
-            }));
-            shunts.addShunt(new ShuntDiv.Transition(frame_1, frame_2, 'dualAnimateCss', 'touchSwipe', {
-                swipe: 'up',
-                exit_animation_name:  'fadeOutUp',
-                exit_animation_function: 'ease',
-                enter_animation_name: 'fadeInUp',
-                enter_animation_function: 'ease',
-            }));
-            shunts.addShunt(new ShuntDiv.Transition(frame_2, frame_1, 'dualAnimateCss', 'touchSwipe', {
-                swipe: 'down',
                 exit_animation_name:  'fadeOutDown',
                 exit_animation_function: 'ease',
                 enter_animation_name: 'fadeInDown',
