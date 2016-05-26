@@ -34,6 +34,8 @@ div#topbar {
 
     box-sizing: border-box;
     padding: 0.5em 2em 0.5em 2em;
+
+    border-bottom: 2px solid white;
 }
 
 div#main-container {

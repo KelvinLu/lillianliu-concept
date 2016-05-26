@@ -320,3 +320,11 @@ shunt_vertical_chain([
     "frame-work-expand-page-3",
     "frame-work-expand-page-4",
 ]);
+
+shunt_vertical_chain([
+    "frame-work-echo-page-1",
+    "frame-work-echo-page-2",
+    "frame-work-echo-page-3",
+    "frame-work-echo-page-4",
+    "frame-work-echo-page-5",
+]);
