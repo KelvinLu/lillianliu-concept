@@ -313,3 +313,10 @@ shunt_vertical_chain([
     "frame-work-aimhigh-page-5",
     "frame-work-aimhigh-page-6",
 ]);
+
+shunt_vertical_chain([
+    "frame-work-expand-page-1",
+    "frame-work-expand-page-2",
+    "frame-work-expand-page-3",
+    "frame-work-expand-page-4",
+]);
