@@ -1,7 +1,27 @@
 body {
     background-color: black;
     color: white;
-    font-family: Inconsolata, sans-serif;;
+    font-family: Roboto, sans-serif;;
+}
+
+a {
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.66);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
 }
 
 div#topbar {
@@ -9,7 +29,7 @@ div#topbar {
     top: 0;
     left: 0;
 
-    height: 2em;
+    height: 3em;
     width: 100vw;
 
     box-sizing: border-box;
@@ -18,10 +38,10 @@ div#topbar {
 
 div#main-container {
     position: absolute !important;
-    top: 2em;
+    top: 3em;
     left: 0;
 
-    height: calc(100vh - 2em);
+    height: calc(100vh - 3em);
     width: 100vw;
 }
 
@@ -56,12 +76,10 @@ div[shunt-frame] {
     width: 100%;
 
     box-sizing: border-box;
-
-    overflow-x: auto;
-    overflow-y: auto;
 }
 
 div[shunt-frame] div.frame-content {
+    position: relative;
     overflow: auto;
 }
 
@@ -104,26 +122,6 @@ div[shunt-frame] div.frame-content.h-centered {
     float: left;
 }
 
-.blob.seventyfive {
-    width: 75%;
-}
-
-.blob.twothirds {
-    width: calc(66.6% - 1px);
-}
-
-.blob.half {
-    width: 50%;
-}
-
-.blob.third {
-    width: calc(33.3% - 1px);
-}
-
-.blob.quarter {
-    width: 25%;
-}
-
 blockquote {
     font-size: 1.2em;
     border-left: 2px dotted white;
@@ -152,6 +150,14 @@ span.hint.glyph.clickable:hover {
 
 span.hint.glyph {
     text-shadow: 0px 0px 2px black;
+
+    height: 2em;
+    width: 2em;
+
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.66);
+    border-radius: 1em;
 }
 
 span.hint.glyph.up {
@@ -218,7 +224,7 @@ div#values div.value img {
     -webkit-filter: contrast(150%) drop-shadow(2px 2px 8px white);
 }
 
-div#frame-about img#about-photo {
+div#frame-about div#about-photo {
     position: absolute;
     top: 0;
     left: 0;
@@ -226,9 +232,11 @@ div#frame-about img#about-photo {
     height: 100%;
     width: 100%;
 
-    z-index: -1;
-    opacity: 0.33;
-    -webkit-filter: contrast(50%) blur(2px);
+    background: url('../assets/img/lillian/about-photo.png') no-repeat center fixed;
+    background-size: cover;
+
+    -webkit-filter: grayscale(50%) contrast(150%) blur(3px);
+    opacity: 0.5;
 }
 
 div.frame div.about-content h1.year {
@@ -246,7 +254,7 @@ div.frame div.about-content h1.year img.year {
 
     z-index: -1;
 
-    transform: skewY(-15deg);
+    transform: skewY(-15deg) translateY(20px);
     -webkit-filter: drop-shadow(1px 1px 1px white);
 }
 
@@ -293,25 +301,44 @@ div#showcase div.item h2 {
 }
 
 div#frame-work-paparazzi-page-1 {
-    overflow: hidden;
+    background: black url('../assets/img/work/paparazzi/main.png') no-repeat center fixed;
+    background-size: cover;
 }
 
-div#frame-work-paparazzi-page-1 div.frame-content {
-    position: relative;
-
-    text-shadow: 2px 2px 4px black;
-    background-color: rgba(0, 0, 0, 0.5);
+div#frame-work-aimhigh-page-1 {
+    background: black url('../assets/img/work/aimhigh/stats.png') no-repeat center fixed;
+    background-size: cover;
 }
 
-div#frame-work-paparazzi-page-1 img {
+div#frame-work-expand-page-1 {
+    background: black url('../assets/img/work/expand/expand-2.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+div#frame-work-echo-page-1 {
+    background: black url('../assets/img/work/echo/voting.png') no-repeat center fixed;
+    background-size: cover;
+}
+
+div#frame-work-portraits-page-1 {
+    background: black url('../assets/img/work/portraits/thumb.png') no-repeat center fixed;
+    background-size: cover;
+}
+
+div#frame-work-vitacore-page-1 {
+    background: black url('../assets/img/work/vitacore/vitacorehead.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+div.work-page-1 div.frame-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
 
-    transform: translateX(-50%) translateY(-50%);
+    bottom: 0;
+    left: 0;
+}
 
-    height: auto;
-    width: 100%;
-
-    z-index: -1;
+div.work-page-1 div.frame-content h1, div.work-page-1 div.frame-content h3 {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.66);
+    padding: 0.5em;
 }
