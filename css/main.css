@@ -1,7 +1,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: Roboto, sans-serif;;
+    font-family: Lora, serif;;
 }
 
 a {
@@ -9,7 +9,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: inherit;
+    font-family: Lora, serif;;
 }
 
 ::-webkit-scrollbar {
@@ -271,7 +271,7 @@ div#showcase div.item {
     font-size: 0.8em;
 
     overflow: hidden;
-    min-height: 15em;
+    height: calc(33.3% - 1px);
     width: 50%;
 
     box-sizing: border-box;
@@ -345,4 +345,19 @@ div.work-page-1 div.frame-content h1, div.work-page-1 div.frame-content h3 {
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.66);
     padding: 0.5em;
+}
+
+div#frame-about div#about-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background: url('../assets/img/lillian/about-photo.png') no-repeat center fixed;
+    background-size: cover;
+
+    -webkit-filter: grayscale(50%) contrast(150%) blur(3px);
+    opacity: 0.5;
 }

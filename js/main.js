@@ -328,3 +328,19 @@ shunt_vertical_chain([
     "frame-work-echo-page-4",
     "frame-work-echo-page-5",
 ]);
+
+shunt_vertical_chain([
+    "frame-work-portraits-page-1",
+    "frame-work-portraits-page-2",
+    "frame-work-portraits-page-3",
+    "frame-work-portraits-page-4",
+    "frame-work-portraits-page-5",
+]);
+
+shunt_vertical_chain([
+    "frame-work-vitacore-page-1",
+    "frame-work-vitacore-page-2",
+    "frame-work-vitacore-page-3",
+    "frame-work-vitacore-page-4",
+    "frame-work-vitacore-page-5",
+]);

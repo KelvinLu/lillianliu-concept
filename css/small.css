@@ -3,26 +3,6 @@
         padding: 2em;
     }
 
-    .blob.seventyfive {
-        width: 100%;
-    }
-
-    .blob.twothirds {
-        width: 100%;
-    }
-
-    .blob.half {
-        width: 100%;
-    }
-
-    .blob.third {
-        width: 100%;
-    }
-
-    .blob.quarter {
-        width: 100%;
-    }
-
     div#topbar span#name {
         width: 100%;
     }
@@ -37,5 +17,6 @@
 
     div#showcase div.item {
         width: 100%;
+        height: 15em;
     }
 }
