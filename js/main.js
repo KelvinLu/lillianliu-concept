@@ -15,7 +15,8 @@ shunts = new ShuntDiv(document.getElementById('main-container'), [
 });
 
 INTRODUCTION_FRAMES = ["frame-home", "frame-about", "frame-work", "frame-resume"];
-INTRODUCTION_FRAMES_WRAPPED = INTRODUCTION_FRAMES.concat([INTRODUCTION_FRAMES[0]]);
+INTRODUCTION_FRAMES_WRAPPED = ["frame-home", "frame-about", "frame-work"];
+INTRODUCTION_FRAMES_WRAPPED = INTRODUCTION_FRAMES_WRAPPED.concat([INTRODUCTION_FRAMES_WRAPPED[0]]);
 
 INTRODUCTION_FRAMES.forEach(function(frame) {
     shunts.addShunt(new ShuntDiv.Introduction(frame, 'dualAnimateCss', {
@@ -214,6 +215,11 @@ WORK_PAGE_1_FRAMES.forEach(function(frame) {
         animation_name:  'fadeInDown',
         animation_function: 'ease',
     }));
+    shunts.addShunt(new ShuntDiv.Transition(frame, 'frame-work', 'enterAnimateCss', 'touchSwipe', {
+        swipe: 'down',
+        animation_name:  'fadeInDown',
+        animation_function: 'ease',
+    }));
 });
 
 shunts.addShunt(new ShuntDiv.Transition('frame-work', WORK_PAGE_1_FRAMES[0], 'exitAnimateCss', 'keypress', {
@@ -223,6 +229,11 @@ shunts.addShunt(new ShuntDiv.Transition('frame-work', WORK_PAGE_1_FRAMES[0], 'ex
 }));
 shunts.addShunt(new ShuntDiv.Transition('frame-work', WORK_PAGE_1_FRAMES[0], 'exitAnimateCss', 'wheel', {
     deltaY: 20,
+    animation_name:  'fadeOutUp',
+    animation_function: 'ease',
+}));
+shunts.addShunt(new ShuntDiv.Transition('frame-work', WORK_PAGE_1_FRAMES[0], 'exitAnimateCss', 'touchSwipe', {
+    swipe: 'up',
     animation_name:  'fadeOutUp',
     animation_function: 'ease',
 }));
@@ -330,6 +341,20 @@ shunt_vertical_chain = function(frames) {
             }));
             shunts.addShunt(new ShuntDiv.Transition(frame_2, frame_1, 'dualAnimateCss', 'click', {
                 id: 'up',
+                exit_animation_name:  'fadeOutDown',
+                exit_animation_function: 'ease',
+                enter_animation_name: 'fadeInDown',
+                enter_animation_function: 'ease',
+            }));
+            shunts.addShunt(new ShuntDiv.Transition(frame_1, frame_2, 'dualAnimateCss', 'touchSwipe', {
+                swipe: 'up',
+                exit_animation_name:  'fadeOutUp',
+                exit_animation_function: 'ease',
+                enter_animation_name: 'fadeInUp',
+                enter_animation_function: 'ease',
+            }));
+            shunts.addShunt(new ShuntDiv.Transition(frame_2, frame_1, 'dualAnimateCss', 'touchSwipe', {
+                swipe: 'down',
                 exit_animation_name:  'fadeOutDown',
                 exit_animation_function: 'ease',
                 enter_animation_name: 'fadeInDown',
